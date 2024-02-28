@@ -21,13 +21,13 @@ jobs:
         run: |
           echo "Installing dependencies..."
           # Add commands to install dependencies here
-          # For example: npm install
+          mvn install
 
       - name: Build project
         run: |
           echo "Building project..."
           # Add commands to build your project here
-          # For example: npm run build
+          mvn clean build
 
       - name: Add delay
         run: |
@@ -38,7 +38,7 @@ jobs:
         run: |
           echo "Running tests..."
           # Add commands to run your tests here
-          # For example: npm test
+          mvn test
 
       - name: Deploy project
         run: |
