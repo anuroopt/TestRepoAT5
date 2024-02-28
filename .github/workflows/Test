@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      # Install dependencies
+      - name: Install dependencies
+        run: |
+          echo "Installing dependencies..."
+          # Add commands to install dependencies here
+
+      # Build your project
+      - name: Build project
+        run: |
+          echo "Building project..."
+          # Add commands to build your project here
+
+      # Run tests
+      - name: Run tests
+        run: |
+          echo "Running tests..."
+          # Add commands to run your tests here
+
+      # Deploy your project
+      - name: Deploy project
+        run: |
+          echo "Deploying project..."
+          # Add commands to deploy your project here
