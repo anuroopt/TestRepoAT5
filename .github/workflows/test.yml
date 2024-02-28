@@ -7,7 +7,7 @@ on:
   pull_request:
     branches:
       - main
-  workflow_dispatch: # Add this line to enable manual triggering
+  workflow_dispatch:
 
 jobs:
   build:
@@ -21,13 +21,13 @@ jobs:
         run: |
           echo "Installing dependencies..."
           # Add commands to install dependencies here
-          mvn install
+          # For example: npm install
 
       - name: Build project
         run: |
           echo "Building project..."
           # Add commands to build your project here
-          mvn clean build
+          # For example: npm run build
 
       - name: Add delay
         run: |
@@ -38,7 +38,7 @@ jobs:
         run: |
           echo "Running tests..."
           # Add commands to run your tests here
-          mvn test
+          # For example: npm test
 
       - name: Deploy project
         run: |
