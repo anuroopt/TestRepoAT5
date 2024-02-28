@@ -1,0 +1,36 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions
+
+      - name: Install dependencies
+        run: |
+          echo "Installing dependencies..."
+          mvn clean
+
+      - name: Build project
+        run: |
+          echo "Building project..."
+          mvn clean build
+
+      - name: Run tests
+        run: |
+          echo "Running tests..."
+          mvn -DskipTests
+
+      - name: Deploy project
+        run: |
+          echo "Deploying project..."
